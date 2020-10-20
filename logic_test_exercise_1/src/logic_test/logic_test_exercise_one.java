@@ -116,6 +116,7 @@ public class logic_test_exercise_one {
                           matrixElement++;
                           facing = "U";
                       }
+                      
                       state = 0;
                       rows++;
                       columns++;       
