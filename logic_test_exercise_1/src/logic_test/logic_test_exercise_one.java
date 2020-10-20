@@ -4,7 +4,6 @@
  * the patron is the facings because it repeates every time R->D->L->U
  * knowing this we can make an algorithm to travel around the matrix following this patron.
  */
-
 package logic_test;
 import java.io.Console;
 import java.util.ArrayList;
@@ -15,39 +14,58 @@ import java.util.Scanner;
  */
 public class logic_test_exercise_one {
 
-    private int tests;
+   private int tests;
    private ArrayList<int[][]> matrix = new ArrayList<>();
+   private Scanner entry = new Scanner(System.in);
+
    
     /**
      * @param test number on cases 
-     * @param matrix m and n size for every matrix, store matrix data 
+     * @param matrix store matrix data 
      */
     public static void main(String[] args) {
         logic_test_exercise_one l = new logic_test_exercise_one();
        
        //Ask for the quantity of cases
-       System.out.print("Number of test cases: ");
-       int cases =0;
-       Scanner entry = new Scanner(System.in);
-       String entryN = entry.nextLine();
-       cases = Integer.parseInt(entryN);
-       l.tests = cases;
-       
+       l.askNumberOfCases();
+      
        //Create the matrix
-       for(int i=0;i<l.tests;i++)
-        {          
+       l.createMatrix();
+       
+       //Logic for the facing
+
+       l.facing();
+      
+   
+    }
+   
+    public void askNumberOfCases(){
+        System.out.print("Number of test cases: ");
+        int cases =0;
+        String entryN = entry.nextLine();
+        cases = Integer.parseInt(entryN);
+        tests = cases;
+    }
+
+    public void createMatrix(){
+
+        for(int i=0;i<tests;i++)
+        {  
            int columns; int rows;
            System.out.print("Matrix #"+Integer.toString(i+1)+" rows: ");
            columns = Integer.parseInt(entry.nextLine());
            System.out.print("Matrix #"+Integer.toString(i+1)+" colums: ");
            rows = Integer.parseInt(entry.nextLine());
            int newMatrix[][] = new int[columns][rows];
-           l.matrix.add(newMatrix);
+           matrix.add(newMatrix);
         }
-       
-       //Logic for get the facing
+    }
+
+    public void facing(){
         System.out.println("Facings: ");
-        for(int newMatrix[][] :l.matrix)
+        int currentPosition= 0;
+
+        for(int newMatrix[][] : matrix)
         {
           String facing = "";
           int rows =0;    
@@ -104,12 +122,13 @@ public class logic_test_exercise_one {
               }
          
           } 
-          System.out.println(facing);
+          currentPosition++;
+          System.out.println("Matrix #" + String.valueOf(currentPosition)+ ": " + facing);
           
         }
         System.out.println("-----END-----");
-   
+
     }
-   
+
     
 }
