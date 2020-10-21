@@ -40,7 +40,7 @@ public class logic_test_exercise_one {
     }
    
     public void askNumberOfCases(){
-        System.out.print("Number of test cases: ");
+        print("Number of test cases: ");
         int cases =0;
         String entryN = entry.nextLine();
         cases = Integer.parseInt(entryN);
@@ -52,9 +52,9 @@ public class logic_test_exercise_one {
         for(int i=0;i<tests;i++)
         {  
            int columns; int rows;
-           System.out.print("Matrix #"+Integer.toString(i+1)+" rows: ");
+           print("Matrix #"+Integer.toString(i+1)+" rows: ");
            columns = Integer.parseInt(entry.nextLine());
-           System.out.print("Matrix #"+Integer.toString(i+1)+" colums: ");
+           print("Matrix #"+Integer.toString(i+1)+" colums: ");
            rows = Integer.parseInt(entry.nextLine());
            int newMatrix[][] = new int[columns][rows];
            matrix.add(newMatrix);
@@ -62,7 +62,7 @@ public class logic_test_exercise_one {
     }
 
     public void facing(){
-        System.out.println("Facings: ");
+        print("Facings: ");
         int currentPosition= 0;
 
         for(int newMatrix[][] : matrix)
@@ -124,12 +124,19 @@ public class logic_test_exercise_one {
          
           } 
           currentPosition++;
-          System.out.println("Matrix #" + String.valueOf(currentPosition)+ ": " + facing);
+          print("Matrix #" + String.valueOf(currentPosition)+ ": " + facing);
           
         }
-        System.out.println("-----END-----");
+        print("-----END-----");
 
     }
+
+
+    public void print(String toPrint)
+    {
+        System.out.println(toPrint);
+    }
+    
 
     
 }
