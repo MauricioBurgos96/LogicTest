@@ -3,6 +3,11 @@
  * For this program all you need to know if the patron, we know that you have to folllow this patron everytime
  * the patron is the facings because it repeates every time R->D->L->U
  * knowing this we can make an algorithm to travel around the matrix following this patron.
+ * If you make a full path around the matrix you will notice that the corners can only be counted one time every path so for that we 
+ * are walking the matrix using a for cycle; in this way we count the corners 2 times every path so we need to have a compensator for 
+ * our operations (-2) every round so we get the correct result at the end.
+ * The program uses states to handle the current facing position that will change every round and at the end will cointain the final position
+ * we are facing.
  */
 package logic_test;
 import java.io.Console;
@@ -20,6 +25,7 @@ public class logic_test_exercise_one {
 
    
     /**
+     * @param entry handle the user input
      * @param test number on cases 
      * @param matrix store matrix data 
      */

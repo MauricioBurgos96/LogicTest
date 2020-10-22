@@ -1,5 +1,3 @@
-package logic_test;
-
 
 import java.util.Scanner;
 import java.lang.Math; 
@@ -44,7 +42,7 @@ public class logic_test_exercise_two {
         //get and print the A and B
         l.getTheAandByear();
 
-        //Check if A and B year is AD OR BC
+        //check if A and B year is AD OR BC
         l.checkIfYearsAreADOrBC();
 
         //convert A and B in Roman years
@@ -56,8 +54,7 @@ public class logic_test_exercise_two {
         //Convert years to roman representation and save to list
         l.converYearsToRomanRepresentation();
 
-        //Get the minumun characters for represent all years in the list
-
+        //Get the minumun characters for represent all years in the list and print the final result
         l.getTheMinumunCharactersForRepresentAllTheYears();
 
 
@@ -98,8 +95,8 @@ public class logic_test_exercise_two {
 
         }
 
-        print("Año A representación en años romanos= "+String.valueOf(yearARoman));
-        print("Año B representación en años romanos= "+String.valueOf(yearBRoman));
+        print("Year A representation in Roman years= "+String.valueOf(yearARoman));
+        print("Year B representation in Roman years= "+String.valueOf(yearBRoman));
 
     }
 
@@ -191,7 +188,7 @@ public class logic_test_exercise_two {
 
     public void converYearsToRomanRepresentation(){
         listOfRomanYears.forEach((year) ->
-        listOfRomanYearsRomanRepresentation.add(YearToRomanRepresentation.toRoman(year))
+        listOfRomanYearsRomanRepresentation.add(toRoman(year))
         );
         
     }
@@ -212,7 +209,56 @@ public class logic_test_exercise_two {
 
     }
 
-  
- 
+
+    public static String toRoman(int input)
+    {
+       
+        String s = "";
     
+        while (input >= 1000) {
+            s += "M";
+            input -= 1000;        
+        } while (input >= 900) {
+            s += "CM";
+            input -= 900;
+        } while (input >= 500) {
+            s += "D";
+            input -= 500;
+        } while (input >= 400) {
+            s += "CD";
+            input -= 400;
+        } while (input >= 100) {
+            s += "C";
+            input -= 100;
+        } while (input >= 90) {
+            s += "XC";
+            input -= 90;
+        } while (input >= 50) {
+            s += "L";
+            input -= 50;
+        } while (input >= 40) {
+            s += "XL";
+            input -= 40;
+        } while (input >= 10) {
+            s += "X";
+            input -= 10;
+        } while (input >= 9) {
+            s += "IX";
+            input -= 9;
+        } while (input >= 5) {
+            s += "V";
+            input -= 5;
+        } while (input >= 4) {
+            s += "IV";
+            input -= 4;
+        } while (input >= 1) {
+            s += "I";
+            input -= 1;
+        }
+    
+        return s;
+    }
+
+
+
 }
