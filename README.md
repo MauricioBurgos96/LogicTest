@@ -23,11 +23,13 @@ Problem 2 Logic.-
    in order to correctly represent the years in their Roman form, the Romans count from year 1 that for us is represented
    as 753 before Christ, so the current year 2019 would be the Roman year 2773.
    The logic that we will use for this program is to detect if the year is AD or BC and convert that year into its
-   corresponding in Roman years that is  from year 1 to year 2773 (current 2020) and then be able to make 
-   the representation in corresponding Roman letters year.
-   if year is AD you new to add 753 in order to get the corresponding roman year if is BC you need to subtract 754.		
-   after that all we need to do is to store this data in an array and then you can go through the array and get which string is the longest.	
+   corresponding in Roman years that is  from year 1 to year 2773 (current 2020).
+   if year is AD you new to add 753 in order to get the corresponding roman year if is BC you need to subtract 754.	
+   Once we get the roman year from A and B limits we need to get all years between that two years (inclusive) and store it into an array	
+   and then be able to make the representation in corresponding Roman letters year for all items in array.		
+   after that all we need to do is to store this data in an array and then you can go through the array and get which string is the longest and print the size.	
 
+	
 
 
 open a IDE that can handle JAVA code and open the file .java in order to see and run the code.
